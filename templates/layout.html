@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/static/style.css">
-    <title>Zip Trades</title>
+    <title>{% block title %}Zip Trades{% endblock %}</title>
 </head>
 <body>
     <nav>
@@ -11,10 +11,12 @@
         <a href="/hot">Hottest</a> |
         <a href="/random">Random</a> |
         <a href="/post">Post</a> |
+        <a href="/forum">Forum</a> |
         <a href="/about">About</a>
     </nav>
     <header>
         <h1><a href="/">ZipTrades</a></h1>
+        {% block subheading %}{% endblock %}
     </header>
     <section>
 {% block content %}{% endblock %}

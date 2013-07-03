@@ -24,11 +24,22 @@ section {
 
 header h1, header a {
     margin-top: 25px;
+    margin-bottom: 10px;
     font-family: 'Special Elite', cursive;
     font-size: 60px;
     text-align: center;
     text-shadow: 4px 4px 4px #aaa;
     color: #444;
+    text-decoration: none;
+}
+
+header h2{
+    margin-top: 5px;
+    font-family: 'Special Elite', cursive;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 3px 3px 3px #aaa;
+    color: #333;
     text-decoration: none;
 }
 
@@ -38,6 +49,8 @@ footer {
     font-size: x-small;
     text-align: center;
 }
+
+/* Post listing form */
 
 .post-listing-form table{
     margin: auto;
@@ -57,4 +70,15 @@ footer {
 .post-listing-form input{
     width: 300px;
     font-size: 14px;
+}
+
+/* Forum listing */
+
+.forum_list th{
+    text-align: left;
+}
+
+.forum_list td{
+    font-size: small;
+    text-align: left;
 }

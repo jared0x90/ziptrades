@@ -41,8 +41,12 @@ def post_listing():
     return render_template("post.html")
 
 @app.route("/about")
-def route():
+def about():
     return render_template("about.html")
+
+@app.route("/forum")
+def forum():
+    return render_template("forum.html")
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', port = 80)
