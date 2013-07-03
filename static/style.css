@@ -1,0 +1,60 @@
+@import url(//fonts.googleapis.com/css?family=Rancho);
+@import url(//fonts.googleapis.com/css?family=Special+Elite);
+
+*, body, html {
+    font-family: verdana;
+    background-color: #eee;
+}
+
+a {
+    text-decoration: none;
+    color: #00f;
+}
+
+nav {
+    font-size: smaller;
+    text-align: center;
+}
+
+section {
+    text-align: center;
+    width: 800px;
+    margin: auto;
+}
+
+header h1, header a {
+    margin-top: 25px;
+    font-family: 'Special Elite', cursive;
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 4px 4px 4px #aaa;
+    color: #444;
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 150px;
+    font-family: verdana;
+    font-size: x-small;
+    text-align: center;
+}
+
+.post-listing-form table{
+    margin: auto;
+    background-color: 
+}
+
+.post-listing-form th{
+    text-align: right;
+    padding-right: 10px;
+    font-weight: normal;
+}
+
+.post-listing-form td{
+    text-align: left;
+}
+
+.post-listing-form input{
+    width: 300px;
+    font-size: 14px;
+}

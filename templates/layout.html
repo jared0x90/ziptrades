@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Zip Trades</title>
+</head>
+<body>
+    <nav>
+        <a href="/new">Newest</a> |
+        <a href="/hot">Hottest</a> |
+        <a href="/random">Random</a> |
+        <a href="/post">Post</a> |
+        <a href="/about">About</a>
+    </nav>
+    <header>
+        <h1><a href="/">ZipTrades</a></h1>
+    </header>
+    <section>
+{% block content %}{% endblock %}
+    </section>
+    <footer>
+        <a href="/user-agreement">User Agreement</a> |
+        <a href="/privacy-policy">Privacy Policy</a>
+        <br>
+        &copy; Jared De Blander. All rights reserved.
+    </footer>
+</body>
+</html>
