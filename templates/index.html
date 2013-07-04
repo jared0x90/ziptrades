@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-<form>
-    <input type="text" name="zip" placeholder="Enter your zipcode">
+<p>To get started enter your zipcode</p>
+<form action="/search_zip_base" method="POST">
+    <input type="text" name="zip" placeholder="e.g., 90210"><br>
+    <input type="submit" value="Begin">
 </form>
-<p>Hello, World, you sexy thing!</p>
 {% endblock %}

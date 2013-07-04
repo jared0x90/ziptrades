@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if zipcode %}
+    Listings near {{ zipcode }}
+{% else %}
+    Zip not found
+{% endif %}
+{% endblock %}

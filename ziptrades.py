@@ -28,7 +28,10 @@
 # pip install flask
 
 from flask import Flask
+from flask import redirect
 from flask import render_template
+from flask import request
+from flask import url_for
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -47,6 +50,18 @@ def about():
 @app.route("/forum")
 def forum():
     return render_template("forum.html")
+
+@app.route('/profile/<username>')
+def profile(username):
+    return render_template("profile.html", username=username)
+
+@app.route('/zip/<int:zipcode>')
+def zip(zipcode):
+    return render_template("zip.html", zipcode=zipcode)
+
+@app.route('/search_zip_base', methods=['POST'])
+def search_zip_base():
+    return redirect(url_for('zip', zipcode=request.form['zip']))
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', port = 80)
