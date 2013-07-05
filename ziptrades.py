@@ -27,14 +27,20 @@
 #
 # pip install flask
 
+# flask imports
 from flask import Flask
 from flask import redirect
 from flask import render_template
 from flask import request
 from flask import url_for
 
+# my imports
+import validators
+
+# initiate flask
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
+# Create routes
 @app.route("/")
 def hello():
     return render_template("index.html")
@@ -55,13 +61,22 @@ def forum():
 def profile(username):
     return render_template("profile.html", username=username)
 
-@app.route('/zip/<int:zipcode>')
+@app.route('/zip/<zipcode>')
 def zip(zipcode):
-    return render_template("zip.html", zipcode=zipcode)
+    if valid_zipcode(zipcode):
+        return render_template("zip.html", zipcode=zipcode)
+    else:
+        return redirect(url_for('error'))
+    
 
 @app.route('/search_zip_base', methods=['POST'])
 def search_zip_base():
-    return redirect(url_for('zip', zipcode=request.form['zip']))
+    if valid_zipcode(request.form['zip']):
+        return redirect(url_for('zip', zipcode=request.form['zip']))
+    else:
+        return redirect(url_for('error'))
 
+
+# Run application
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', port = 80)
