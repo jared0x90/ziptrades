@@ -63,20 +63,24 @@ def profile(username):
 
 @app.route('/zip/<zipcode>')
 def zip(zipcode):
-    if valid_zipcode(zipcode):
+    if validators.valid_zipcode(zipcode):
         return render_template("zip.html", zipcode=zipcode)
     else:
-        return redirect(url_for('error'))
-    
+        return redirect(url_for('error_invalid_zip'))
+
+@app.route('/error_invalid_zip')
+def error_invalid_zip():
+    return render_template('error_invalid_zip.html')
 
 @app.route('/search_zip_base', methods=['POST'])
 def search_zip_base():
-    if valid_zipcode(request.form['zip']):
+    if validators.valid_zipcode(request.form['zip']):
         return redirect(url_for('zip', zipcode=request.form['zip']))
     else:
-        return redirect(url_for('error'))
+        return redirect(url_for('error_invalid_zip'))
 
 
 # Run application
 if __name__ == "__main__":
+    app.debug = True
     app.run(host = '0.0.0.0', port = 80)
