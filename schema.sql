@@ -28,3 +28,31 @@ create table entries (
 );
 
 */
+
+drop table if exists users;
+create table users (
+    id integer primary key autoincrement,
+    username text not null,
+    email text not null,
+    zipcode text not null,
+    activated integer not null
+);
+
+drop table if exists forum_threads;
+create table forum_threads (
+    id integer primary key autoincrement,
+    user_id integer not null,
+    title text not null,
+    date_created integer not null,
+    date_recent integer not null
+);
+
+drop table if exists forum_posts;
+create table forum_posts (
+    id integer primary key autoincrement,
+    user_id integer not null,
+    body text not null,
+    date_created integer not null,
+    date_modified integer not null
+);
+

@@ -92,7 +92,6 @@ def search_zip_base():
     else:
         return redirect(url_for('error_invalid_zip'))
 
-
 # Run application
 if __name__ == "__main__":
     app.debug = True
