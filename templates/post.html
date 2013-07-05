@@ -3,7 +3,7 @@
 <h2>Create a listing</h2>
 {% endblock %}
 {% block content %}
-<form class="post-listing-form" action="/create_post_listing" method="POST">
+<form class="post-listing-form" action="{{ url_for("create_post_listing") }}" method="POST">
     <table>
         <tr>
             <th>Email</th>

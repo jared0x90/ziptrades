@@ -77,6 +77,30 @@ def hello():
 def post_listing():
     return render_template("post.html")
 
+@app.route("/new")
+def newest_listings():
+    return render_template("new.html")
+
+@app.route("/hot")
+def hot():
+    return render_template("hot.html")
+
+@app.route("/user_agreement")
+def user_agreement():
+    return render_template("user_agreement.html")
+
+@app.route("/privacy_policy")
+def privacy_policy():
+    return render_template("privacy_policy.html")
+
+@app.route("/etiquette")
+def etiquette():
+    return render_template("etiquette.html")
+
+@app.route("/random")
+def random_listing():
+    return render_template("random.html")
+
 @app.route("/about")
 def about():
     return render_template("about.html")

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <p>To get started enter your zipcode</p>
-<form action="/search_zip_base" method="POST">
+<form action="{{ url_for("search_zip_base") }}" method="POST">
     <input type="text" name="zip" placeholder="e.g., 90210"><br>
     <input type="submit" value="Begin">
 </form>
