@@ -56,3 +56,26 @@ create table forum_posts (
     date_modified integer not null
 );
 
+
+drop table if exists listings;
+create table listings (
+    id integer primary key autoincrement,
+    anon integer not null,
+    anon_email text not null,
+    user_id integer not null,
+    zipcode text not null,
+    title text not null,
+    body text not null,
+    date_created integer not null,
+    date_modified integer not null
+);
+
+drop table if exists zipcodes;
+create table zipcodes (
+    id integer primary key autoincrement,
+    zipcode text not null,
+    city text not null,
+    state text not null,
+    latitude real not null,
+    longitude real not null
+);
