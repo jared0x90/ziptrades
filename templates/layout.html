@@ -1,35 +1,35 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/static/style.css">
-    <title>{% block title %}Zip Trades{% endblock %}</title>
-</head>
-<body>
-    <nav>
-        Listings :
-        <a href="{{ url_for('newest_listings') }}">Newest</a> /
-        <a href="{{ url_for('hot') }}">Hottest</a> /
-        <a href="{{ url_for('random_listing') }}">Random</a> /
-        <a href="{{ url_for('create_listing') }}">Create</a> |
-        Forum :
-        <a href="{{ url_for('forum') }}">Threads</a> /
-        <a href="{{ url_for('create_thread') }}">Create Thread</a>
-    </nav>
-    <header>
-        <h1><a href="{{ url_for('index') }}">ZipTrades</a></h1>
-        {% block subheading %}{% endblock %}
-    </header>
-    <section>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>{% block title %}Zip Trades{% endblock %}</title>
+<nav>
+    Listings :
+    <a href="{{ url_for('newest_listings') }}">Newest</a> /
+    <a href="{{ url_for('hot') }}">Hottest</a> /
+    <a href="{{ url_for('random_listing') }}">Random</a> /
+    <a href="{{ url_for('create_listing') }}">Create</a> |
+    Forum :
+    <a href="{{ url_for('forum') }}">Threads</a> /
+    <a href="{{ url_for('create_thread') }}">Create Thread</a>
+</nav>
+<header>
+    <h1><a href="{{ url_for('index') }}">ZipTrades</a></h1>
+    {% block subheading %}{% endblock %}
+</header>
+<section>
 {% block content %}{% endblock %}
-    </section>
-    <footer>
-        <a href="{{ url_for('user_agreement') }}">User Agreement</a> |
-        <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a> |
-        <a href="{{ url_for('etiquette') }}">Etiquette</a> |
-        <a href="{{ url_for('about') }}">About</a>
-        <br>
-        &copy; Jared De Blander. All rights reserved.
-    </footer>
-</body>
-</html>
+</section>
+<footer>
+    <a href="{{ url_for('user_agreement') }}">User Agreement</a> |
+    <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a> |
+    <a href="{{ url_for('etiquette') }}">Etiquette</a> |
+    <a href="{{ url_for('about') }}">About</a> |
+    <a href="http://validator.w3.org/check/referer">HTML5</a>
+    <br>
+    &copy; Jared De Blander. All rights reserved.<br>
+    <a href="http://flask.pocoo.org/"><img
+   src="http://flask.pocoo.org/static/badges/powered-by-flask-s.png"
+   border="0"
+   alt="powered by Flask"
+   title="powered by Flask"></a>
+</footer>
