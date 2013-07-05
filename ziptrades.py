@@ -27,6 +27,10 @@
 #
 # pip install flask
 
+##############################################################################
+# imports
+##############################################################################
+
 # flask imports
 from flask import Flask
 from flask import redirect
@@ -39,6 +43,10 @@ import validators
 import os
 import sys
 
+##############################################################################
+# environment variables
+##############################################################################
+
 # Check for environment variables
 def check_environment_exists(variable_name):
     if variable_name in os.environ:
@@ -50,10 +58,17 @@ def check_environment_exists(variable_name):
 # check_environment_exists("ZT_DB_PATH")
 # check_environment_exists("ZT_SECRET_KEY")
 
+
+##############################################################################
 # initiate flask
+##############################################################################
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
+##############################################################################
 # Create routes
+##############################################################################
+# General routes
+##############################################################################
 @app.route("/")
 def hello():
     return render_template("index.html")
@@ -84,7 +99,9 @@ def zip(zipcode):
 @app.route('/error_invalid_zip')
 def error_invalid_zip():
     return render_template('error_invalid_zip.html')
-
+##############################################################################
+# Post routes
+##############################################################################
 @app.route('/search_zip_base', methods=['POST'])
 def search_zip_base():
     if validators.valid_zipcode(request.form['zip']):
@@ -92,7 +109,17 @@ def search_zip_base():
     else:
         return redirect(url_for('error_invalid_zip'))
 
+@app.route('/create_post_listing', methods=['POST'])
+def create_post_listing():
+    if validators.valid_zipcode(request.form['zip']):
+        return redirect(url_for('zip', zipcode=request.form['zip']))
+    else:
+        return redirect(url_for('error_invalid_zip'))
+
+
+##############################################################################
 # Run application
+##############################################################################
 if __name__ == "__main__":
     app.debug = True
     app.run(host = '0.0.0.0', port = 80)

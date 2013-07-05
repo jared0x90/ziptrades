@@ -3,7 +3,7 @@
 <h2>Create a listing</h2>
 {% endblock %}
 {% block content %}
-<div class="post-listing-form">
+<form class="post-listing-form" action="/create_post_listing" method="POST">
     <table>
         <tr>
             <th>Email</th>
@@ -11,12 +11,23 @@
         </tr>
         <tr>
             <th>Zip Code</th>
-            <td><input type="text" name="zipcode" placeholder="90210"></td>
+            <td><input type="text" name="zip" placeholder="90210"></td>
         </tr>
         <tr>
-            <th>Listing Title</th>
+            <th>Title</th>
             <td><input type="text" name="title" placeholder="SNES Controller, 2BR 3BA Apt."></td>
         </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <textarea name="description" placeholder="2 bedroom, 3 bath apartment. 1200 sq.ft! pet friendy"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input type="submit" value="Create Listing">
+            </td>
     </table>
-</div>
+</form>
 {% endblock %}

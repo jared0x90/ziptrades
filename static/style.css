@@ -54,7 +54,7 @@ footer {
 
 .post-listing-form table{
     margin: auto;
-    background-color: 
+    background-color:
 }
 
 .post-listing-form th{
@@ -67,9 +67,13 @@ footer {
     text-align: left;
 }
 
-.post-listing-form input{
-    width: 300px;
+.post-listing-form input, .post-listing-form textarea {
+    width: 400px;
     font-size: 14px;
+}
+
+.post-listing-form textarea {
+    height: 200px;
 }
 
 /* Forum listing */
