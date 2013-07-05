@@ -70,12 +70,16 @@ app = Flask(__name__, static_folder='static', static_url_path='/static')
 # General routes
 ##############################################################################
 @app.route("/")
-def hello():
+def index():
     return render_template("index.html")
 
-@app.route("/post")
-def post_listing():
-    return render_template("post.html")
+@app.route("/create_listing")
+def create_listing():
+    return render_template("create_listing.html")
+
+@app.route("/create_thread")
+def create_thread():
+    return render_template("create_thread.html")
 
 @app.route("/new")
 def newest_listings():

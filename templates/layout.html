@@ -7,24 +7,27 @@
 </head>
 <body>
     <nav>
-        <a href="/new">Newest</a> |
-        <a href="/hot">Hottest</a> |
-        <a href="/random">Random</a> |
-        <a href="/post">Post</a> |
-        <a href="/forum">Forum</a> |
-        <a href="/about">About</a>
+        Listings :
+        <a href="{{ url_for('newest_listings') }}">Newest</a> /
+        <a href="{{ url_for('hot') }}">Hottest</a> /
+        <a href="{{ url_for('random_listing') }}">Random</a> /
+        <a href="{{ url_for('create_listing') }}">Create</a> |
+        Forum :
+        <a href="{{ url_for('forum') }}">Threads</a> /
+        <a href="{{ url_for('create_thread') }}">Create Thread</a>
     </nav>
     <header>
-        <h1><a href="/">ZipTrades</a></h1>
+        <h1><a href="{{ url_for('index') }}">ZipTrades</a></h1>
         {% block subheading %}{% endblock %}
     </header>
     <section>
 {% block content %}{% endblock %}
     </section>
     <footer>
-        <a href="/user_agreement">User Agreement</a> |
-        <a href="/privacy_policy">Privacy Policy</a> |
-        <a href="/etiquette">Etiquette</a>
+        <a href="{{ url_for('user_agreement') }}">User Agreement</a> |
+        <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a> |
+        <a href="{{ url_for('etiquette') }}">Etiquette</a> |
+        <a href="{{ url_for('about') }}">About</a>
         <br>
         &copy; Jared De Blander. All rights reserved.
     </footer>

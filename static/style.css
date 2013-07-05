@@ -1,6 +1,14 @@
 @import url(//fonts.googleapis.com/css?family=Rancho);
 @import url(//fonts.googleapis.com/css?family=Special+Elite);
 
+/*
+
+CSS Styles for ZipTrades
+
+TODO: Convert font-size to em where not already em
+
+*/
+
 *, body, html {
     font-family: verdana;
     background-color: #eee;
@@ -11,9 +19,10 @@ a {
     color: #00f;
 }
 
-nav {
-    font-size: smaller;
+nav, nav a {
+    font-size: 0.9em;
     text-align: center;
+    font-family: 'Special Elite', verdana;
 }
 
 section {
@@ -25,7 +34,7 @@ section {
 header h1, header a {
     margin-top: 25px;
     margin-bottom: 10px;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Special Elite', verdana;
     font-size: 60px;
     text-align: center;
     text-shadow: 4px 4px 4px #aaa;
@@ -35,7 +44,7 @@ header h1, header a {
 
 header h2{
     margin-top: 5px;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Special Elite', verdana;
     font-size: 30px;
     text-align: center;
     text-shadow: 3px 3px 3px #aaa;
