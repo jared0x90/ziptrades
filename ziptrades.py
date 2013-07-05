@@ -36,6 +36,19 @@ from flask import url_for
 
 # my imports
 import validators
+import os
+import sys
+
+# Check for environment variables
+def check_environment_exists(variable_name):
+    if variable_name in os.environ:
+        return True
+    else:
+        print("Missing environment variable: " + variable_name)
+        sys.exit(1)
+
+# check_environment_exists("ZT_DB_PATH")
+# check_environment_exists("ZT_SECRET_KEY")
 
 # initiate flask
 app = Flask(__name__, static_folder='static', static_url_path='/static')
