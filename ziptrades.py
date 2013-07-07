@@ -109,6 +109,10 @@ def random_listing():
 def about():
     return render_template("about.html")
 
+@app.route("/api")
+def api():
+    return render_template("api.html")
+
 @app.route("/forum")
 def forum():
     return render_template("forum.html")
