@@ -27,6 +27,12 @@ create table entries (
   text text not null
 );
 
+==============================================================================
+
+Create your database by running the following command:
+
+    sqlite3 ziptrades.db < schema.sql
+
 */
 
 drop table if exists users;
